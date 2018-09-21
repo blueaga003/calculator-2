@@ -28,15 +28,16 @@ def calculator_input():
             except IndexError:
                 if user_option_choice == "o":
                     calculator_menu()
-                    user_input.append(1)
                 elif user_option_choice == "e":
                     print("Thanks for using the calculator!")
                     sys.exit()
                 elif user_option_choice not in "amtdscpr":
                     print("This was not a valid option. Please try again.")
-                    user_input.append(1)
+                    calculator_menu()
                     continue
-            user_input.append(1)
+                elif user_option_choice in "amtdpr":
+                    print("Please provide two numbers in addition to the function you are tying to perform.")
+            user_input.extend([1,1])
             num1 = int(user_input[1])
             num2 = int(user_input[2])
             print(num1, num2)
