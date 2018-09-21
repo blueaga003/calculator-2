@@ -6,10 +6,13 @@ calculator program yourself in this file.
 
 from arithmetic import *
 
-def calculator_menu():
+def calculator_greeting():
     print("Welcome to the calcutor!")
+
+def calculator_menu():
     print("You have the following options: add (a), minus (m), times (t), divide (d), square (s), cube (c), power (p), and remainder (r).")
-    print("To see this menu again, type 'options (o)'.")
+    print("To see this menu again, type options (o)")
+    print("To quit, type exit (e).")
 
 def calculator_input():
     while True:
@@ -25,7 +28,11 @@ def calculator_input():
                 if user_option_choice == "o":
                     calculator_menu()
                     user_input.append(1)
-                user_input.append(1)
+                elif user_option_choice not in "amtdscpr":
+                    print("This was not a valid option. Please try again.")
+                    user_input.append(1)
+                    continue
+            user_input.append(1)
             num1 = int(user_input[1])
             num2 = int(user_input[2])
             print(num1, num2)
@@ -65,6 +72,7 @@ def calculator_operations(user_choice, input_number_1, input_number_2):
 
 
 def run_calculator():
+    calculator_greeting()
     calculator_menu()
     user_function_choice, user_from_input_1, user_from_input_2 = calculator_input()
     calculator_operations(user_function_choice, user_from_input_1, user_from_input_2)
