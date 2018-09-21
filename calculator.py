@@ -5,6 +5,7 @@ calculator program yourself in this file.
 """
 
 from arithmetic import *
+import sys
 
 def calculator_greeting():
     print("Welcome to the calcutor!")
@@ -28,6 +29,9 @@ def calculator_input():
                 if user_option_choice == "o":
                     calculator_menu()
                     user_input.append(1)
+                elif user_option_choice == "e":
+                    print("Thanks for using the calculator!")
+                    sys.exit()
                 elif user_option_choice not in "amtdscpr":
                     print("This was not a valid option. Please try again.")
                     user_input.append(1)
