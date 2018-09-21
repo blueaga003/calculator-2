@@ -23,28 +23,27 @@ def calculator_input():
         user_option_choice = user_input[0][0].lower()
 
         try:
-            try:
-                user_input[2]
-            except IndexError:
-                if user_option_choice == "o":
-                    calculator_menu()
-                elif user_option_choice == "e":
-                    print("Thanks for using the calculator!")
-                    sys.exit()
-                elif user_option_choice not in "amtdscpr":
-                    print("This was not a valid option. Please try again.")
-                    calculator_menu()
-                    continue
-                elif user_option_choice in "amtdpr":
-                    print("Please provide two numbers in addition to the function you are tying to perform.")
+          #  try:
+            user_input[2]
+        except IndexError:
+            if user_option_choice == "o":
+                calculator_menu()
+            elif user_option_choice == "e":
+                print("Thanks for using the calculator!")
+                sys.exit()
+            elif user_option_choice not in "amtdscpr":
+                print("This was not a valid option. Please try again.")
+                calculator_menu()
+                continue
+            elif user_option_choice in "amtdpr":
+                print("Please provide two numbers in addition to the function you are tying to perform.")
+            elif user_option_choice == "c":
+                print("Please provide one number in addition to the cube function.")
             user_input.extend([1,1])
-            num1 = int(user_input[1])
-            num2 = int(user_input[2])
-            print(num1, num2)
-            return user_option_choice, num1, num2
-            break
-        except ValueError:
-            print ("Enter a number")
+            number_1 = int(user_input[1])
+            number_2 = int(user_input[2])
+        #    break        
+        return user_option_choice, number_1, number_2
 
 def calculator_operations(user_choice, input_number_1, input_number_2):
     while True:
