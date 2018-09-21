@@ -23,8 +23,8 @@ def calculator_input():
         user_option_choice = user_input[0][0].lower()
 
         try:
-          #  try:
-            user_input[2]
+            number_1 = user_input[1]
+            number_2 = user_input[2]
         except IndexError:
             if user_option_choice == "o":
                 calculator_menu()
