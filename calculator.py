@@ -6,9 +6,6 @@ calculator program yourself in this file.
 
 from arithmetic import *
 
-
-
-
 def calculator_menu():
     print("Welcome to the calcutor!")
     print("You have the following options: add (a), minus (m), times (t), divide (d), square (s), cube (c), power (p), and remainder (r).")
@@ -25,6 +22,9 @@ def calculator_input():
             try:
                 user_input[2]
             except IndexError:
+                if user_option_choice == "o":
+                    calculator_menu()
+                    user_input.append(1)
                 user_input.append(1)
             num1 = int(user_input[1])
             num2 = int(user_input[2])
