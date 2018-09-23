@@ -5,7 +5,7 @@ calculator program yourself in this file.
 """
 
 from arithmetic import *
-import sys
+import sys, pdb
 
 def calculator_greeting():
     print("Welcome to the calcutor!")
@@ -21,7 +21,6 @@ def calculator_input():
         user_input = input("> ")
         user_input = user_input.split(" ")
         user_option_choice = user_input[0][0].lower()
-
         try:
             number_1 = user_input[1]
         except IndexError:
@@ -43,15 +42,15 @@ def calculator_input():
             elif user_option_choice in "amtdpr":
                 print("Please provide two numbers in addition to the function you are tying to perform.")
                 continue
-            user_input.extend([1,1])
-            number_1 = int(user_input[1])
-            number_2 = int(user_input[2])
+        user_input.extend([1,1])
+        number_1 = int(user_input[1])
+        number_2 = int(user_input[2])
         return user_option_choice, number_1, number_2
 
 def calculator_operations(user_choice, input_number_1, input_number_2):
     while True:
        # print("You're in the calculator_operations function.")
-       # print(input_number_1, input_number_2)
+        print(input_number_1, input_number_2)
         if user_choice == "a":
             print(add(input_number_1, input_number_2))
         elif user_choice == "m":
@@ -83,6 +82,5 @@ def run_calculator():
     calculator_menu()
     user_function_choice, user_from_input_1, user_from_input_2 = calculator_input()
     calculator_operations(user_function_choice, user_from_input_1, user_from_input_2)
-
 
 run_calculator()
