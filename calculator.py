@@ -17,7 +17,6 @@ def calculator_menu():
 
 def calculator_input():
     while True:
-        print("You're in the calculator_input function.")
         user_input = input("> ")
         user_input = user_input.split(" ")
         user_option_choice = user_input[0][0].lower()
@@ -49,8 +48,6 @@ def calculator_input():
 
 def calculator_operations(user_choice, input_number_1, input_number_2):
     while True:
-       # print("You're in the calculator_operations function.")
-        print(input_number_1, input_number_2)
         if user_choice == "a":
             print(add(input_number_1, input_number_2))
         elif user_choice == "m":
