@@ -27,6 +27,7 @@ def calculator_input():
         except IndexError:
             if user_option_choice == "c":
                 print("Please provide one number in addition to the cube function.")
+                continue
         try:
             number_2 = user_input[2]
         except IndexError:
@@ -41,16 +42,16 @@ def calculator_input():
                 continue
             elif user_option_choice in "amtdpr":
                 print("Please provide two numbers in addition to the function you are tying to perform.")
+                continue
             user_input.extend([1,1])
             number_1 = int(user_input[1])
             number_2 = int(user_input[2])
-#    break        
         return user_option_choice, number_1, number_2
 
 def calculator_operations(user_choice, input_number_1, input_number_2):
     while True:
-        print("You're in the calculator_operations function.")
-        print(input_number_1, input_number_2)
+       # print("You're in the calculator_operations function.")
+       # print(input_number_1, input_number_2)
         if user_choice == "a":
             print(add(input_number_1, input_number_2))
         elif user_choice == "m":
